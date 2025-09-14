@@ -22,7 +22,7 @@ void conversion(int *digitos, char* romano, int cantDigitos){
                     *romano = *letra;
                     romano++;
 
-                } else for (int i=0; i<*digitos; i++, romano++) *romano = *(letra-1); 
+                } else for (int j=0; j<*digitos; j++, romano++) *romano = *(letra-1); 
             
             } else if (*digitos==5) *romano = *letra;
             else {
@@ -36,7 +36,7 @@ void conversion(int *digitos, char* romano, int cantDigitos){
                 } else {
                     *romano = *letra;
                     romano++;
-                    for (int i=0; i<*digitos-5; i++, romano++) *romano = *(letra-1);
+                    for (int j=0; j<*digitos-5; j++, romano++) *romano = *(letra-1);
                 }
             }
         }

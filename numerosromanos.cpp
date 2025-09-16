@@ -3,7 +3,7 @@ using namespace std;
 
 char letras[7] = {'I','V','X','L','C','D','M'};
 
-int calcDigitos(int num, int *digitos){ // Llena el arreglo con los digitos y retorna la cantidad de digitos
+int calcDigitos(int num, int *digitos){ // Llena el arreglo con los digitos y retorna la cantidad de digito
     int cant=0;
     for (; num>0; num/=10, digitos++, cant++) *digitos = num%10;
     return cant;
@@ -60,5 +60,6 @@ int main(){
     conversion(digitos, romano, cantDigitos);
     cout<<"Ese numero en romano se escribe: ";
     imprimir(romano);
+    system("pause");
     return 0;
 }

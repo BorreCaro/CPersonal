@@ -36,9 +36,9 @@ int sumaElementos(){
 float promedio(){
     return sumaElementos()*1.f/length;
 }
-int* menorElemento(){
-    int* menor = &arreglo[0];
-    for (int i=1; i<length; i++) if(*menor>arreglo[i]) menor = &arreglo[i];
+int* menorElemento(arreglo, length){
+    int* menor = arreglo;
+    for (int i=1; i<length; arreglo++) if(*menor>*arreglo) menor = *arreglo;
     return menor;
 }
 

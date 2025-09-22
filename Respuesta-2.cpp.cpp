@@ -26,13 +26,12 @@ char codificacionDecodificacion[] = {
         'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'
 };
 
-// Función para cifrar un mensaje utilizando el cifrado César
+// Funciï¿½n para cifrar un mensaje utilizando el cifrado Cï¿½sar
 void cifrarMensaje(char* m, int desplazamiento,char* code) {
 	for(int i=0; *(m+i)!=0; i++){
 		for (int j=0; j<53; j++){
 			if(*(m+i)==*(code+j)){
-				if(j+desplazamiento>=53) *(m+i) = *(code+j+desplazamiento-53);
-				else *(m+i) = *(code+j+desplazamiento);
+				*(m+i) = *(code+(j+desplazamiento)%53);
 				cout<<*(m+i);
 				break;
 			}
@@ -40,13 +39,12 @@ void cifrarMensaje(char* m, int desplazamiento,char* code) {
 	}
 }
 
-// Función para descifrar un mensaje utilizando el cifrado César
+// Funciï¿½n para descifrar un mensaje utilizando el cifrado Cï¿½sar
 void descifrarMensaje(char* m, int desplazamiento, char* code) {
 	for(int i=0; *(m+i)!=0; i++){
 		for (int j=0; j<53; j++){
 			if(*(m+i)==*(code+j)){
-				if(j-desplazamiento<0) *(m+i) = *(code+j-desplazamiento+53);
-				else *(m+i) = *(code+j-desplazamiento);
+				*(m+i) = *(code+(j-desplazamiento)%53);
 				cout<<*(m+i);
 				break;
 			}	

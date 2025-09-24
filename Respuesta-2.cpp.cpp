@@ -44,7 +44,7 @@ void descifrarMensaje(char* m, int desplazamiento, char* code) {
 	for(int i=0; *(m+i)!=0; i++){
 		for (int j=0; j<53; j++){
 			if(*(m+i)==*(code+j)){
-				*(m+i) = *(code+(j-desplazamiento)%53);
+				*(m+i) = *(code+(j-desplazamiento+53)%53);
 				cout<<*(m+i);
 				break;
 			}	
